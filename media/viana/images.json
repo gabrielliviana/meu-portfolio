@@ -1,0 +1,31 @@
+{
+  "albumName": "Viana do Castelo",
+  "location": "Viana do Castelo",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "1.webp",
+      "title": "Viana do Castelo",
+      "description": "vista geral",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Escadas",
+      "description": "arquitetura",
+      "category": "Editorial"
+    },
+    {
+      "filename": "3.webp",
+      "title": "Estátua",
+      "description": "monumento",
+      "category": "Editorial"
+    },
+    {
+      "filename": "4.webp",
+      "title": "Igreja",
+      "description": "arquitetura religiosa",
+      "category": "Editorial"
+    }
+  ]
+}

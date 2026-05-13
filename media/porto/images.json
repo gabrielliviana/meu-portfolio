@@ -1,0 +1,49 @@
+{
+  "albumName": "Porto",
+  "location": "Porto",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "1.webp",
+      "title": "Porto",
+      "description": "paisagem urbana",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Igreja",
+      "description": "arquitetura religiosa",
+      "category": "Editorial"
+    },
+    {
+      "filename": "3.webp",
+      "title": "Detalhe 1",
+      "description": "composição",
+      "category": "Editorial"
+    },
+    {
+      "filename": "4.webp",
+      "title": "Detalhe 2",
+      "description": "perspectiva",
+      "category": "Editorial"
+    },
+    {
+      "filename": "5.webp",
+      "title": "Detalhe 3",
+      "description": "luz e sombra",
+      "category": "Editorial"
+    },
+    {
+      "filename": "6.webp",
+      "title": "Detalhe 4",
+      "description": "luz e sombra",
+      "category": "Editorial"
+    },
+    {
+      "filename": "7.webp",
+      "title": "Detalhe 5",
+      "description": "composição",
+      "category": "Editorial"
+    }
+  ]
+}

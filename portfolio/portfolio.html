@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Gabrielli Viana</title>
+  <link rel="stylesheet" href="../style/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="../index.html#hero" class="nav-logo">G<span>.</span>VIANA</a>
+    <ul class="nav-links">
+      <li><a href="../index.html" data-i18n="home.label">Home</a></li>
+      <li><a href="../index.html#sobre" data-i18n="nav.sobre">Sobre</a></li>
+      <li><a href="../index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+      <!-- <li><a href="../index.html#curriculo" data-i18n="nav.curriculo">Currículo</a></li> -->
+      <li><a href="../index.html#contato" data-i18n="nav.contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="portfolio-header reveal">
+      <div>
+        <p class="section-label" data-i18n="portfolioPage.label">PORTFOLIO</p>
+        <h2 class="section-title"></h2>
+      </div>
+    </div>
+    <div class="photo-grid reveal" id="photo-grid">
+      <!-- Images will be loaded dynamically here -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n="footer.rights">© 2026 Gabrielli Viana — Todos os direitos reservados</span>
+    <span data-i18n="footer.location">Guimarães, Portugal</span>
+  </footer>
+
+  <!-- LANGUAGE SWITCHER FLOATING BOX -->
+  <div id="lang-float-box">
+    <button id="lang-toggle" title="Toggle language">EN</button>
+  </div>
+
+  <script>
+    // ── CURSOR ──
+    const cursor = document.getElementById('cursor');
+    const ring   = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function animateCursor() {
+      rx += (mx - rx) * 0.18;
+      ry += (my - ry) * 0.18;
+      cursor.style.transform = `translate(${mx}px,${my}px) translate(-50%,-50%)`;
+      ring.style.transform   = `translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // ── NAV scroll ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Scroll reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => obs.observe(r));
+
+    // ── i18n (Internationalization) ──
+    let currentLang = localStorage.getItem('lang') || 'pt';
+    let translations = {};
+
+    async function loadTranslations() {
+      try {
+        const response = await fetch('../translations.json');
+        translations = await response.json();
+        applyTranslations(currentLang);
+      } catch (error) {
+        console.error('Error loading translations:', error);
+      }
+    }
+
+    function applyTranslations(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const keys = key.split('.');
+        let value = translations[lang];
+        for (const k of keys) {
+          value = value[k];
+        }
+        if (value) {
+          // For marquee items, preserve the ✦ symbol
+          if (el.classList.contains('marquee-item')) {
+            el.innerHTML = value + '<span>✦</span>';
+          } else {
+            el.innerHTML = value;
+          }
+        }
+      });
+      
+      // Update lang toggle button
+      const langBtn = document.getElementById('lang-toggle');
+      langBtn.textContent = currentLang === 'pt' ? 'EN' : 'PT';
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', () => {
+      currentLang = currentLang === 'pt' ? 'en' : 'pt';
+      localStorage.setItem('lang', currentLang);
+      applyTranslations(currentLang);
+    });
+
+    loadTranslations();
+
+    // ── Get album from URL parameter ──
+    const urlParams = new URLSearchParams(window.location.search);
+    const album = urlParams.get('album');
+
+    // ── Load images from images.json ──
+    async function loadAlbumImages() {
+      if (!album) return;
+      
+      try {
+        const response = await fetch(`../media/${album}/images.json`);
+        if (!response.ok) throw new Error('images.json not found');
+        
+        const data = await response.json();
+        const photoGrid = document.getElementById('photo-grid');
+        photoGrid.innerHTML = ''; // Clear placeholder
+        
+        // Update section title with album name
+        if (data.albumName) {
+          document.querySelector('.section-title').textContent = data.albumName;
+        }
+        
+        data.images.forEach((image, index) => {
+          // Skip capa image
+          if (data.capaFile && image.filename.toLowerCase() === data.capaFile.toLowerCase()) {
+            return;
+          }
+          
+          const photoCard = document.createElement('div');
+          photoCard.className = 'photo-card';
+          photoCard.dataset.cat = album;
+          
+          photoCard.innerHTML = `
+            <img src="../media/${album}/${image.filename}" alt="${image.title}">
+            <div class="card-placeholder">— ${image.description} —</div>
+            <div class="card-overlay">
+              <span class="card-cat">${image.category || 'Foto'}</span>
+              <span class="card-title">${image.title}</span>
+            </div>
+          `;
+          
+          photoGrid.appendChild(photoCard);
+        });
+        
+        // Re-observe new elements for reveal animation
+        photoGrid.classList.add('reveal', 'visible');
+        
+      } catch (error) {
+        console.error('Error loading album:', error);
+        const photoGrid = document.getElementById('photo-grid');
+        const errorMsg = translations[currentLang]?.portfolioPage?.errorNotFound || 'Album não encontrado ou arquivo images.json ausente';
+        photoGrid.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">${errorMsg}</p>`;
+      }
+    }
+
+    loadAlbumImages();
+
+    // ── Portfolio filter ──
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.photo-card').forEach(card => {
+          const show = filter === 'todos' || card.dataset.cat === filter;
+          card.style.opacity    = show ? '1'    : '0.2';
+          card.style.transform  = show ? ''     : 'scale(0.97)';
+          card.style.pointerEvents = show ? '' : 'none';
+        });
+      });
+    });
+
+    // ── IMAGE PROTECTION ──
+    // Disable right-click on images
+    document.addEventListener('contextmenu', (e) => {
+      if (e.target.tagName === 'IMG' || e.target.closest('.photo-card img')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable drag & drop on images
+    document.addEventListener('dragstart', (e) => {
+      if (e.target.tagName === 'IMG' || e.target.closest('.photo-card img')) {
+        e.preventDefault();
+        return false;
+      }
+    });
+
+    // Disable copy/paste of images via keyboard
+    document.addEventListener('copy', (e) => {
+      const selection = window.getSelection();
+      if (selection && selection.toString().length === 0) {
+        const img = e.target.closest('img');
+        if (img && (img.closest('.photo-card') || img.closest('.about-img'))) {
+          e.preventDefault();
+          return false;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

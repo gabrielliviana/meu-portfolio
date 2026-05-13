@@ -1,0 +1,19 @@
+{
+  "albumName": "Paris",
+  "location": "Paris",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "Arco-do-triunfo.webp",
+      "title": "Arco do Triunfo",
+      "description": "monumento icônico",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "torre-eiffel.webp",
+      "title": "Torre Eiffel",
+      "description": "vista noturna",
+      "category": "Paisagem"
+    }
+  ]
+}

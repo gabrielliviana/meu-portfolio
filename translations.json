@@ -1,0 +1,120 @@
+{
+  "pt": {
+    "nav": {
+      "sobre": "Sobre",
+      "portfolio": "Portfolio",
+      "curriculo": "Currículo",
+      "contato": "Contato"
+    },
+    "hero": {
+      "tag": "Fotógrafa &amp; Estudante de Design",
+      "sub": "Transformando instantes em eternidade",
+      "cta": "Ver Portfolio →",
+      "scroll": "Scroll"
+    },
+    "sobre": {
+      "label": "Sobre mim",
+      "title": "UMA VISÃO,<br>UM CLIQUE.",
+      "text1": "Sou Gabrielli, estudante de multimédia, do 11º ano, minhas áreas são fotografia, design gráfico, edição de imagem e edição de som. Fiz e ainda faço trabalhos para a Escola Secundária Martins Sarmento.",
+      "text2": "Formada em Artes Visuais, trabalhei com revistas nacionais, marcas de moda e projetos de preservação cultural. Acredito que a fotografia é, antes de tudo, um ato de presença.",
+      "statsExp": "Anos de experiência",
+      "statsProj": "Projetos realizados",
+      "statsAwards": "Prémios &amp; publicações"
+    },
+    "portfolio": {
+      "label": "Trabalhos",
+      "title": "PORTFOLIO"
+    },
+    "contact": {
+      "label": "Contacto",
+      "title": "VAMOS<br>TRABALHAR",
+      "instagram": "Instagram",
+      "behance": "Behance",
+      "linkedin": "LinkedIn",
+      "vsco": "VSCO"
+    },
+    "footer": {
+      "rights": "© 2026 Gabrielli Viana — Todos os direitos reservados",
+      "location": "Guimarães, Portugal"
+    },
+    "marquee": {
+      "portrait": "Retrato",
+      "landscape": "Paisagem",
+      "editorial": "Editorial",
+      "documentary": "Documental",
+      "architecture": "Arquitetura",
+      "street": "Street",
+      "fineArt": "Fine Art"
+    },
+    "home": {
+      "label": "Home"
+    },
+    "about": {
+      "photoPlaceholder": "Sua foto aqui"
+    },
+    "portfolioPage": {
+      "label": "PORTFOLIO",
+      "errorNotFound": "Album não encontrado ou arquivo images.json ausente",
+      "errorTitle": "Erro ao carregar o álbum"
+    }
+  },
+  "en": {
+    "nav": {
+      "sobre": "About",
+      "portfolio": "Portfolio",
+      "curriculo": "Resume",
+      "contato": "Contact"
+    },
+    "hero": {
+      "tag": "Photographer &amp; Design Student",
+      "sub": "Turning moments into eternity",
+      "cta": "View Portfolio →",
+      "scroll": "Scroll"
+    },
+    "sobre": {
+      "label": "About me",
+      "title": "A VISION,<br>A CLICK.",
+      "text1": "I'm Gabrielli Viana, a photographer based in Portugal with over 10 years of experience. My work lives on the border between documentary and artistic — each image is a narrative built with light, time, and intention.",
+      "text2": "Trained in Visual Arts, I've worked with national magazines, fashion brands and cultural preservation projects. I believe that photography is, above all, an act of presence.",
+      "statsExp": "Years of experience",
+      "statsProj": "Projects completed",
+      "statsAwards": "Awards &amp; publications"
+    },
+    "portfolio": {
+      "label": "Works",
+      "title": "PORTFOLIO"
+    },
+    "contact": {
+      "label": "Contact",
+      "title": "LET'S<br>WORK",
+      "instagram": "Instagram",
+      "behance": "Behance",
+      "linkedin": "LinkedIn",
+      "vsco": "VSCO"
+    },
+    "footer": {
+      "rights": "© 2026 Gabrielli Viana — All rights reserved",
+      "location": "Guimarães, Portugal"
+    },
+    "marquee": {
+      "portrait": "Portrait",
+      "landscape": "Landscape",
+      "editorial": "Editorial",
+      "documentary": "Documentary",
+      "architecture": "Architecture",
+      "street": "Street",
+      "fineArt": "Fine Art"
+    },
+    "home": {
+      "label": "Home"
+    },
+    "about": {
+      "photoPlaceholder": "Your photo here"
+    },
+    "portfolioPage": {
+      "label": "PORTFOLIO",
+      "errorNotFound": "Album not found or images.json file missing",
+      "errorTitle": "Error loading album"
+    }
+  }
+}

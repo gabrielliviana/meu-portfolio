@@ -1,0 +1,103 @@
+{
+  "albumName": "Guimarães",
+  "location": "Guimarães",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "guima.webp",
+      "title": "Guimarães",
+      "description": "centro histórico",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "bah.webp",
+      "title": "Penha",
+      "description": "montanha",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "shopping.webp",
+      "title": "Shopping",
+      "description": "arquitetura moderna",
+      "category": "Editorial"
+    },
+    {
+      "filename": "13.webp",
+      "title": "Tribuna",
+      "description": "infraestrutura",
+      "category": "Editorial"
+    },
+    {
+      "filename": "1.webp",
+      "title": "Detalhe 1",
+      "description": "close-up",
+      "category": "Retrato"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Detalhe 2",
+      "description": "close-up",
+      "category": "Retrato"
+    },
+    {
+      "filename": "3.webp",
+      "title": "Detalhe 3",
+      "description": "close-up",
+      "category": "Retrato"
+    },
+    {
+      "filename": "4.webp",
+      "title": "Detalhe 4",
+      "description": "perspectiva",
+      "category": "Editorial"
+    },
+    {
+      "filename": "5.webp",
+      "title": "Detalhe 5",
+      "description": "perspectiva",
+      "category": "Editorial"
+    },
+    {
+      "filename": "6.webp",
+      "title": "Detalhe 6",
+      "description": "luz e sombra",
+      "category": "Editorial"
+    },
+    {
+      "filename": "7.webp",
+      "title": "Detalhe 7",
+      "description": "luz e sombra",
+      "category": "Editorial"
+    },
+    {
+      "filename": "8.webp",
+      "title": "Detalhe 8",
+      "description": "luz natural",
+      "category": "Editorial"
+    },
+    {
+      "filename": "9.webp",
+      "title": "Detalhe 9",
+      "description": "luz natural",
+      "category": "Editorial"
+    },
+    {
+      "filename": "10.webp",
+      "title": "Detalhe 10",
+      "description": "composição",
+      "category": "Editorial"
+    },
+    {
+      "filename": "11.webp",
+      "title": "Detalhe 11",
+      "description": "composição",
+      "category": "Editorial"
+    },
+    {
+      "filename": "12.webp",
+      "title": "Lírios",
+      "description": "flora",
+      "category": "Paisagem"
+    }
+  ]
+}

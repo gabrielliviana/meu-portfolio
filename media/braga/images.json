@@ -1,0 +1,25 @@
+{
+  "albumName": "Braga",
+  "location": "Braga",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "1.webp",
+      "title": "Braga",
+      "description": "arquitetura",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Braga 2",
+      "description": "detalhes",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "3.webp",
+      "title": "Braga 3",
+      "description": "vista",
+      "category": "Paisagem"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "albumName": "Corrida da Primavera 2026",
+  "location": "Guimarães",
+  "capaFile": "Capa.webp",
+  "images": [
+    {
+      "filename": "Design sem nome.webp",
+      "title": "Árvore",
+      "description": "flora",
+      "category": "Paisagem"
+    },
+    {
+      "filename": "1.webp",
+      "title": "Corrida 1",
+      "description": "movimento",
+      "category": "Editorial"
+    },
+    {
+      "filename": "2.webp",
+      "title": "Corrida 2",
+      "description": "ação",
+      "category": "Editorial"
+    },
+    {
+      "filename": "3.webp",
+      "title": "Corrida 3",
+      "description": "movimento",
+      "category": "Editorial"
+    },
+    {
+      "filename": "4.webp",
+      "title": "Corrida 4",
+      "description": "ação",
+      "category": "Editorial"
+    },
+    {
+      "filename": "5.webp",
+      "title": "Corrida 5",
+      "description": "movimento",
+      "category": "Editorial"
+    },
+    {
+      "filename": "6.webp",
+      "title": "Corrida 6",
+      "description": "ação",
+      "category": "Editorial"
+    },
+    {
+      "filename": "7.webp",
+      "title": "Corrida 7",
+      "description": "movimento",
+      "category": "Editorial"
+    }
+  ]
+}
